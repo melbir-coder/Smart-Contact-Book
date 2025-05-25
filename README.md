@@ -36,7 +36,7 @@ If you encounter any issues:
 Before cloning the repository, ensure Git is installed on your system:
 
 #### Windows
-- Download Git from [Go to git.com](https://git-scm.com/).
+- Download Git from [git-scm.com](https://git-scm.com/).
 - Run the installer and follow the prompts (use default settings).
 - Verify installation by opening Command Prompt and running:
   ``` bash
@@ -45,8 +45,8 @@ Before cloning the repository, ensure Git is installed on your system:
 - Option 1: Install via Homebrew (recommended):
   ``` bash 
   brew install git
-- Option 2: Download from [Go to git.com](https://git-scm.com/).
-- Verify with:
+- Option 2: Download from [git-scm.com](https://git-scm.com/).
+- Verify with: 
   ``` bash
   git --version
 
