@@ -55,36 +55,36 @@ Before cloning the repository, ensure Git is installed on your system:
 ### Contact Management
 - **View Contacts**: Display all saved contacts with complete details (name, phone, email, category)
 Displays a formatted list of all saved contacts, showing:
-- Name
-- Phone number
-- Last contact date
-- Category (e.g., Friend/Family)
-- **Add/Delete Contacts**: Easily manage your contact list with add/remove functionality
+  - Name
+  - Phone number
+  - Last contact date
+  - Category (e.g., Friend/Family)
+  - **Add/Delete Contacts**: Easily manage your contact list with add/remove functionality
 Allows users to add a new contact by entering:
-- Name
-- Phone number
-- Email address
+  - Name
+  - Phone number
+  - Email address
 Removes a contact by name   (Automatically sets last_contact to "Never" and initializes an empty interactions list.)
 ### Interaction Tracking
 - **Log Interactions**: 
 Records a new interaction with a contact by:
-- Entering a date (YYYY-MM-DD format)
-- Updates the last_contact field
-- Appends the date to the interactions list
+  - Entering a date (YYYY-MM-DD format)
+  - Updates the last_contact field
+  - Appends the date to the interactions list
 - **Last Contact Indicator**:
-- Computes how many days have passed since the last interaction.
-- Handles edge cases (e.g., "Never" contacted).
+  - Computes how many days have passed since the last interaction.
+  - Handles edge cases (e.g., "Never" contacted).
 ### Statistics & Insights
 - View Contact Stats
 For a selected contact, shows:
-- Last contact date and days elapsed
-- Total number of interactions
-- First/last interaction dates (if available)
+  - Last contact date and days elapsed
+  - Total number of interactions
+  - First/last interaction dates (if available)
 ### Smart Reminders
 - **Inactivity Alerts**: 
 Identifies "inactive" contacts (no interaction in >30 days) and flags them with:
-- Contact name
-- Days since last interaction
+  - Contact name
+  - Days since last interaction
 
 ## Group Members
 
