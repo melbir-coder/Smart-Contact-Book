@@ -59,11 +59,11 @@ Before cloning the repository, ensure Git is installed on your system:
   - Last contact date
   - Category (e.g., Friend/Family)
 - **Add/Delete Contacts**: Easily manage your contact list with add/remove functionality
- - Allows users to add a new contact by entering:
-  - Name
-  - Phone number
-  - Email address
- - Removes a contact by name (Automatically sets last_contact to "Never" and initializes an empty interactions list.)
+ Allows users to add a new contact by entering:
+   - Name
+   - Phone number
+   - Email address
+ Removes a contact by name (Automatically sets last_contact to "Never" and initializes an empty interactions list.)
 ### Interaction Tracking
 - **Log Interactions**: Records a new interaction with a contact by:
   - Entering a date (YYYY-MM-DD format)
