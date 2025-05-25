@@ -1,6 +1,7 @@
 # Smart-Contact-Book  
 
-## Description                                                                                                                                                     A Python-based contact management system that goes beyond basic storage by tracking interactions, calculating days since last contact, and providing reminders for inactive contacts. This tool helps users maintain relationships by identifying contacts they haven't communicated with in over 30 days and displaying key statistics about their interactions.
+## Description 
+A Python-based contact management system that goes beyond basic storage by tracking interactions, calculating days since last contact, and providing reminders for inactive contacts. This tool helps users maintain relationships by identifying contacts they haven't communicated with in over 30 days and displaying key statistics about their interactions.
 
 ## Installation & Setup
 
