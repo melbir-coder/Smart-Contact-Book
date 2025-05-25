@@ -7,7 +7,7 @@ A Python-based contact management system that goes beyond basic storage by track
 
 1. Clone the repository:  
    ```bash  
-   git clone https://github.com/melbir-coder/smart-contact-book.git
+   git clone https://github.com/melbir-coder/Smart-Contact-Book.git
 2. Navigate to the project directory:
    ```bash   
    cd smart-contact-book
