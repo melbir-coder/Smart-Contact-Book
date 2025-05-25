@@ -63,6 +63,7 @@ Allows users to add a new contact by entering:
    - Name
    - Phone number
    - Email address <br>
+
 Removes a contact by name (Automatically sets last_contact to "Never" and initializes an empty interactions list.)
 ### Interaction Tracking
 - **Log Interactions**: Records a new interaction with a contact by:
