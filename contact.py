@@ -5,5 +5,6 @@ class Contact:
         self.email = email
         self.category = category
     
-    def is_valid_phone(self):
+    def validate(self):
+        """Validate phone number (10 digits)"""
         return len(self.phone) == 10 and self.phone.isdigit()
