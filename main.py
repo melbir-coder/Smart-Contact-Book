@@ -8,7 +8,7 @@ contacts =  load_contacts() or {
         "phone": "0945367823",
         "email": "birukzewdu245@gmail.com",
         "last_contact": "2025-03-01",
-        "category": 'Friend'
+        "category": 'Friend',
         "interactions": ["2024-11-28", "2025-01-15", "2025-03-01"]
     },
     "yilkal Kebede": {
