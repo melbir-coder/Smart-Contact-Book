@@ -8,15 +8,18 @@ contacts =  load_contacts() or {
         "phone": "0945367823",
         "email": "birukzewdu245@gmail.com",
         "last_contact": "2025-03-01",
-        "category": 'Friend',
+        "category": 'Friend'
+      biruk/interaction
+        "interactions": ["2025-01-15", "2025-03-01", "2025-04-29"
         "interactions": ["2024-11-28", "2025-01-15", "2025-03-01"]
+      main
     },
     "yilkal Kebede": {
         "phone": "0972123256",
         "email": "yheys345@gmail.com",
         "last_contact": "2025-05-10",
         "category": 'Family',
-        "interactions": ["2025-04-28", "2025-05-10"]
+        "interactions": ["2025-04-28", "2025-05-10", "2025-05-23"]
 
     },
     "Endale Biru": {
@@ -47,7 +50,10 @@ def add_contact():
     name = input("Enter name: ").strip()
     phone = input("Enter phone: ").strip()
     email = input("Enter email: ").strip()
+ biruk/interaction
+    category = input("Enter Category(family/friend, etc.): ").strip()
     category = input("Enter Category(family, friend, etc.): ").strip()
+ main
     
     # Contact class for validation of contact number
     new_contact = Contact(name, phone, email, category)
@@ -87,7 +93,7 @@ def log_interaction():
 
 def show_stats():
     """Display interaction statistics"""
-    name = input("Enter contact name: ").strip()
+    name = input("Enter saved contact name: ").strip()
     if name not in contacts:
         print("Contact not found!")
         return
