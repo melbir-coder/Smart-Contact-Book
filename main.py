@@ -1,10 +1,18 @@
-contacts = {
+from storage import load_contacts, save_contacts
+from contact import Contact
+from interaction import days_since
+from ui import Colors, print_contact, print_reminder
+
+contacts =  load_contacts() or {
     "Biruk Zewdu": {
         "phone": "0945367823",
         "email": "birukzewdu245@gmail.com",
         "last_contact": "2025-03-01",
-        "category": 'Friend',
-        "interactions": ["2025-01-15", "2025-03-01", "2025-04-29"]
+        "category": 'Friend'
+      biruk/interaction
+        "interactions": ["2025-01-15", "2025-03-01", "2025-04-29"
+        "interactions": ["2024-11-28", "2025-01-15", "2025-03-01"]
+      main
     },
     "yilkal Kebede": {
         "phone": "0972123256",
@@ -19,43 +27,52 @@ contacts = {
         "email": "endalebiru03@gmail.com",
         "last_contact": "2025-05-25",
         "category": 'Family',
-        "interactions": ["2025-04-29", "2025-05-15", "2025-05-25"]
+        "interactions": ["2025-04-29", "2025-05-15"]
     },
     "Meklit Kiros": {
         "phone": "0990345632",
         "email": "meklitkir76@gmail.com",
         "last_contact": "2024-12-10",
         "category": 'Friend',
-        "interactions": ["2024-09-10", "2024-12-10"]
+        "interactions": ["2024-09-10", "2024-12-10", "2025-04-18"]
     }
 
 }
 
 def display_contacts():
     """Show all contacts with basic info"""
-    print("\n--- CONTACTS ---")
+    print(f"\n{Colors.GREEN}--- CONTACTS ---{Colors.RESET}")
     for name, info in contacts.items():
-        print(f"{name} | Phone: {info['phone']} | Last contact: {info['last_contact']} | Category: {info['category']}")
+        print_contact(name, info)
 
 def add_contact():
     """Add a new contact to the book"""
     name = input("Enter name: ").strip()
     phone = input("Enter phone: ").strip()
     email = input("Enter email: ").strip()
+ biruk/interaction
     category = input("Enter Category(family/friend, etc.): ").strip()
+    category = input("Enter Category(family, friend, etc.): ").strip()
+ main
     
+    # Contact class for validation of contact number
+    new_contact = Contact(name, phone, email, category)
+    if not new_contact.validate():
+        print("Invalid phone number!")
+        return
+
     contacts[name] = {
-        "phone": phone,
-        "email": email,
+        "phone": new_contact.phone,
+        "email": new_contact.email,
         "last_contact": "Never",
-        "category": category,
+        "category": new_contact.category,
         "interactions": []
     }
     print(f"✓ {name} added!")
 
 def delete_contact():
     """Remove a contact"""
-    name = input("Enter name to delete: ").strip()
+    name = input("Enter the name you want to delete: ").strip()
     if name in contacts:
         del contacts[name]
         print(f"✗ {name} deleted.")
@@ -74,15 +91,6 @@ def log_interaction():
     contacts[name]["interactions"].append(date)
     print(f"📅 Logged interaction with {name} on {date}")
 
-def calculate_days_since(last_date):
-    """Calculate days since last contact (simplified)"""
-    if last_date == "Never":
-        return float('inf')
-    
-    # For simplicity, assume today is 2025-10-10
-    year, month, day = map(int, last_date.split("-"))
-    return (2025 - year) * 365 + (10 - month) * 30 + (10 - day)
-
 def show_stats():
     """Display interaction statistics"""
     name = input("Enter saved contact name: ").strip()
@@ -91,13 +99,13 @@ def show_stats():
         return
     
     data = contacts[name]
-    days = calculate_days_since(data["last_contact"])
+    days = days_since(data["last_contact"])
     
     print(f"\n Stats for {name}:")
     print(f"Last contact: {data['last_contact']} ({int(days)} days ago)")
     print(f"Total interactions: {len(data['interactions'])}")
     
-    # Interaction frequency (simplified)
+    # Interaction frequency
     if len(data["interactions"]) > 1:
         first = min(data["interactions"])
         last = max(data["interactions"])
@@ -105,11 +113,11 @@ def show_stats():
 
 def check_reminders():
     """Show contacts not interacted with in >30 days"""
-    print("\n--- REMINDERS ---")
+    print(f"\n{Colors.RED}--- REMINDERS ---{Colors.RESET}")
     inactive = []
     
     for name, data in contacts.items():
-        days = calculate_days_since(data["last_contact"])
+        days = days_since(data["last_contact"])
         if days > 30:
             inactive.append((name, days))
     
@@ -121,34 +129,38 @@ def check_reminders():
 
 def main_menu():
     """Main user interface"""
-    while True:
-        print("\n📖 SMART CONTACT BOOK")
-        print("1. View Contacts")
-        print("2. Add Contact")
-        print("3. Delete Contact")
-        print("4. Log Interaction")
-        print("5. View Stats")
-        print("6. Check Reminders")
-        print("7. Exit")
+    try:
+        while True:
+            print(f"\n{Colors.BLUE}📖 SMART CONTACT BOOK{Colors.RESET}")
+            print("1. View Contacts")
+            print("2. Add Contact")
+            print("3. Delete Contact")
+            print("4. Log Interaction")
+            print("5. View Stats")
+            print("6. Check Reminders")
+            print("7. Exit")
         
-        choice = input("Choose an option (1-7): ").strip()
+            choice = input("Choose an option (1-7): ").strip()
         
-        if choice == "1":
-            display_contacts()
-        elif choice == "2":
-            add_contact()
-        elif choice == "3":
-            delete_contact()
-        elif choice == "4":
-            log_interaction()
-        elif choice == "5":
-            show_stats()
-        elif choice == "6":
-            check_reminders()
-        elif choice == "7":
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice!")
+            if choice == "1":
+                display_contacts()
+            elif choice == "2":
+                add_contact()
+            elif choice == "3":
+                delete_contact() 
+            elif choice == "4":
+                log_interaction()
+            elif choice == "5":
+                show_stats()
+            elif choice == "6":
+                check_reminders()
+            elif choice == "7":
+                print("Have A Nice Time!")
+                break
+            else:
+                print("Invalid choice!")
+    finally:
+        save_contacts(contacts)  # Auto-save on exit    
+
 if __name__ == "__main__":
     main_menu()
