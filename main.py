@@ -4,14 +4,14 @@ contacts = {
         "email": "birukzewdu245@gmail.com",
         "last_contact": "2025-03-01",
         "category": 'Friend',
-        "interactions": ["2025-01-15", "2025-03-01"]
+        "interactions": ["2025-01-15", "2025-03-01", "2025-04-29"]
     },
     "yilkal Kebede": {
         "phone": "0972123256",
         "email": "yheys345@gmail.com",
         "last_contact": "2025-05-10",
         "category": 'Family',
-        "interactions": ["2025-04-28", "2025-05-10"]
+        "interactions": ["2025-04-28", "2025-05-10", "2025-05-23"]
 
     },
     "Endale Biru": {
@@ -42,7 +42,7 @@ def add_contact():
     name = input("Enter name: ").strip()
     phone = input("Enter phone: ").strip()
     email = input("Enter email: ").strip()
-    category = input("Enter Category: ").strip()
+    category = input("Enter Category(family/friend, etc.): ").strip()
     
     contacts[name] = {
         "phone": phone,
@@ -85,7 +85,7 @@ def calculate_days_since(last_date):
 
 def show_stats():
     """Display interaction statistics"""
-    name = input("Enter contact name: ").strip()
+    name = input("Enter saved contact name: ").strip()
     if name not in contacts:
         print("Contact not found!")
         return
