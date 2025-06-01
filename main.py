@@ -9,7 +9,7 @@ contacts =  load_contacts() or {
         "email": "birukzewdu245@gmail.com",
         "last_contact": "2025-03-01",
         "category": 'Friend',
-        "interactions": ["2025-01-15", "2025-03-01"]
+        "interactions": ["2024-11-28", "2025-01-15", "2025-03-01"]
     },
     "yilkal Kebede": {
         "phone": "0972123256",
@@ -47,9 +47,9 @@ def add_contact():
     name = input("Enter name: ").strip()
     phone = input("Enter phone: ").strip()
     email = input("Enter email: ").strip()
-    category = input("Enter Category: ").strip()
+    category = input("Enter Category(family, friend, etc.): ").strip()
     
-    # Contact class for validation
+    # Contact class for validation of contact number
     new_contact = Contact(name, phone, email, category)
     if not new_contact.validate():
         print("Invalid phone number!")
@@ -66,7 +66,7 @@ def add_contact():
 
 def delete_contact():
     """Remove a contact"""
-    name = input("Enter name to delete: ").strip()
+    name = input("Enter the name you want to delete: ").strip()
     if name in contacts:
         del contacts[name]
         print(f"✗ {name} deleted.")
