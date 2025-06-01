@@ -24,14 +24,14 @@ contacts =  load_contacts() or {
         "email": "endalebiru03@gmail.com",
         "last_contact": "2025-05-25",
         "category": 'Family',
-        "interactions": ["2025-04-29", "2025-05-15", "2025-05-25"]
+        "interactions": ["2025-04-29", "2025-05-15"]
     },
     "Meklit Kiros": {
         "phone": "0990345632",
         "email": "meklitkir76@gmail.com",
         "last_contact": "2024-12-10",
         "category": 'Friend',
-        "interactions": ["2024-09-10", "2024-12-10"]
+        "interactions": ["2024-09-10", "2024-12-10", "2025-04-18"]
     }
 
 }
@@ -149,7 +149,7 @@ def main_menu():
             elif choice == "6":
                 check_reminders()
             elif choice == "7":
-                print("Goodbye!")
+                print("Have A Nice Time!")
                 break
             else:
                 print("Invalid choice!")
